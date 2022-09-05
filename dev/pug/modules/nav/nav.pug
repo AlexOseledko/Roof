@@ -1,0 +1,13 @@
+.nav 
+    .nav-wrap
+        a.logo-link(href="./index.html") 
+            img.logo.lazyload.fade-box(data-src="./static/images/common/logo-light.svg", alt="Logo HomeMate.expert")
+            //- span.divider –
+            //- img.logo.lazyload(data-src="./static/images/common/logo-ella.png", alt="Logo Ella")
+        .mibile-title Enter your ZIP Code
+        form.enter-zip-code-wrap(action='#')
+            span.title Enter your ZIP Code
+            .input-wrap
+                input.zip-modal-open(type="tel" autocomplete="postal-code" placeholder="Enter your ZIP Code")
+                .error-msg
+            button.open_questionnaire(type="submit") Get an estimate

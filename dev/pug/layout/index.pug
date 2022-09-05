@@ -1,0 +1,133 @@
+include ../helpers/mixins
+block variables
+
+doctype html
+html(lang="en-US")
+	head
+
+		//- Global site tag (gtag.js) - Google Analytics
+		script(async='' src='https://www.googletagmanager.com/gtag/js?id=G-B4WKNM4HKG')
+		script.
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'G-B4WKNM4HKG');
+
+		//- Google Tag Manager
+		script.
+			(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+			new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+			j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+			'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+			})(window,document,'script','dataLayer','GTM-NCBPN8G');
+		//- End Google Tag Manager
+
+
+		meta(charset="utf-8")
+		title #{title}
+		<!--[if IE]>
+		meta(http-equiv='X-UA-Compatible', content="IE = edge")
+		<![endif]-->
+		link(rel="icon", type="image/png", href="./static/images/common/favicon.png")
+
+		meta(name='viewport' content='width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no,height=device-height')
+
+		meta(name="description", content="The best deals on WALK-IN TUBS from direct seppliers without markups")
+		meta(name="keywords" content="")
+		meta(name="facebook-domain-verification" content="kbus8mc4nq8j9zsr3uymcrlnij2ksc")
+
+		script.
+				!function (w, d, t) {
+				w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var i="https://analytics.tiktok.com/i18n/pixel/events.js";ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=i,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};var o=document.createElement("script");o.type="text/javascript",o.async=!0,o.src=i+"?sdkid="+e+"&lib="+t;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(o,a)};
+				ttq.load('C9KH6VRC77UD01Q8H0L0');
+				ttq.page();
+				}(window, document, 'ttq');
+			
+
+		//- Meta Pixel Code
+		script.
+			!function(f,b,e,v,n,t,s)
+			{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+			n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+			if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+			n.queue=[];t=b.createElement(e);t.async=!0;
+			t.src=v;s=b.getElementsByTagName(e)[0];
+			s.parentNode.insertBefore(t,s)}(window, document,'script',
+			'https://connect.facebook.net/en_US/fbevents.js');
+			fbq('init', '796016551381179');
+			fbq('track', 'PageView');
+
+		noscript
+			img(height='1' width='1' style='display:none' src='https://www.facebook.com/tr?id=796016551381179&ev=PageView&noscript=1')
+		//- Meta Pixel Code End
+		
+		link(rel="stylesheet" type='text/css' href="static/css/styles.css")
+		link(rel='preconnect' href='https://fonts.googleapis.com')
+		link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
+		link(href='https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap' rel='stylesheet')
+		
+	body
+		//- Google Tag Manager (noscript)
+		noscript
+			iframe(src='https://www.googletagmanager.com/ns.html?id=GTM-NCBPN8G' height='0' width='0' style='display:none;visibility:hidden')
+		//- End Google Tag Manager (noscript)
+
+		.main-content
+			include ../modules/nav/nav
+			include ../modules/header/header
+			
+			block content
+			include ../modules/footer/footer
+			
+		include ../modules/quiz/quiz
+
+		script.
+			let params = window.location.search
+			.replace('?','')
+			.split('&')
+			.reduce((p, e) => {
+				let a = e.split('=');
+				p[ decodeURIComponent(a[0])] = decodeURIComponent(a[1]);
+				return p;
+				},{}
+			);
+			const streamKey = params['stream_key'] ? params['stream_key'] : 'ggxnqHMBjw';
+			localStorage.setItem('stream_key', streamKey);
+
+			let script = document.createElement('script');
+			script.src = "https://hm.afflifter.com/tracker/analytics.js";
+			script.dataset.stream = streamKey;
+			document.body.append(script);
+
+
+		script(src="https://maps.googleapis.com/maps/api/js?v=weekly&key=AIzaSyDhzxqNmRTrYXDX2TZF8Ygv9eTi8EIJPCQ&libraries=places&sensor=false&language=en") 
+		script(src="static/js/libs.js")
+		script(src="static/js/main.js")
+		block script
+
+		// TrustedForm
+		script(type='text/javascript').
+			(function() {
+			var tf = document.createElement('script');
+			tf.type = 'text/javascript'; tf.async = true;
+			tf.src = ("https:" == document.location.protocol ? 'https' : 'http') + "://api.trustedform.com/trustedform.js?field=xxTrustedFormCertUrl&identifier=hm1&ping_field=xxTrustedFormPingUrl&l=" + new Date().getTime() + Math.random();
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(tf, s);
+			})();
+		noscript
+			img(src='https://api.trustedform.com/ns.gif')
+		// End TrustedForm
+
+		// Jornaya
+		script#LeadiDscript(type='text/javascript').
+			(function() {
+			var s = document.createElement('script');
+			s.id = 'LeadiDscript_campaign';
+			s.type = 'text/javascript';
+			s.async = true;
+			s.src = '//create.lidstatic.com/campaign/b30546ed-5d40-771a-2b1f-9e3f446aeb3e.js?snippet_version=2';
+			var LeadiDscript = document.getElementById('LeadiDscript');
+			LeadiDscript.parentNode.insertBefore(s, LeadiDscript);
+			})();
+		noscript
+			img(src='//create.leadid.com/noscript.gif?lac=5c88871b-81af-71fb-91e4-4c7935b03c28&lck=b30546ed-5d40-771a-2b1f-9e3f446aeb3e&snippet_version=2')
+		// End Jornaya

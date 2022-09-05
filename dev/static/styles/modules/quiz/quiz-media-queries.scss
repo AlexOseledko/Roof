@@ -1,0 +1,70 @@
+@media screen and (min-width: 991.8px) {
+    section.quiz.modal ,
+    section.are-you-shure,
+    section.to-home-page,
+    section.do-not-sell{
+
+        .answer-wrapper {
+            justify-content: center;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: stretch;
+            max-width: 100%;
+
+            &.row-3-elem{
+            max-width: 600px;
+
+            }
+        }
+        .modal-body {
+            max-width: 800px;
+        }
+
+        .fancy-input{
+            max-width: 400px;
+
+        }
+
+        .radio-custom {
+            max-width: 168px;
+            margin: 8px 4px;
+
+            label {
+                padding: 24px 16px 16px;
+                border-radius: 16px;
+                text-align: center;
+                flex-direction: column;
+                min-width: auto;
+                width: 168px;
+   
+
+                img {
+                    width: 56px;
+                    height: 56px;
+                    margin: 0 0 16px;
+                }
+            }
+        }
+
+        .success-text {
+            flex-direction: row;
+            flex-wrap: nowrap;
+            .top{
+                justify-content: flex-start;
+            }
+            .col{
+                margin-left: 8px;
+                margin-right: 8px;
+
+                &:first-child{
+                    margin-left: 0;
+                }
+                &:last-child{
+                    margin-right: 0;
+                }
+            }
+
+        }
+
+    }
+}

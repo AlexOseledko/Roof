@@ -1,0 +1,17 @@
+@media screen and (min-width: 719.8px) {
+    .modal {
+        padding: 14px;
+        .modal-wrap {
+            box-shadow: $shadow;
+            max-width: 580px;
+            border-radius: 8px;
+            box-shadow: $shadow;
+            padding: 48px 48px 64px;
+            min-height: auto;
+            .close-btn {
+                right: 40px;
+            }
+        }
+    }
+}
+

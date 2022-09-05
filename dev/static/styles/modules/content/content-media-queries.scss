@@ -1,0 +1,237 @@
+@media screen and (min-width: 639.8px) {
+    section.features {
+        .container {
+            .row{
+                display: flex;
+                flex-wrap: nowrap;
+            }
+            .col{
+                flex: 1;
+                &:nth-child(2n){
+                    margin-left: 8px;
+                }
+                &:nth-child(2n-1){
+                    margin-right: 8px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 991.8px) {
+    section.differences {
+        .container {
+            .differences-slider {
+                margin-top: 64px;
+                flex-direction: row;
+                align-items: center;
+
+                .screen-view {
+                    flex: 2;
+                    margin-top: 0;
+                    margin-right: 32px;
+                    padding-bottom: 0;
+
+                    .progress-wrap {
+                        margin-top: 36px;
+                        width: 100%;
+                        bottom: 0;
+                    }
+                }
+
+                .name-list {
+                    flex: 1;
+                    padding-top: 0;
+                    padding-bottom: 0;
+                    margin-left: 24px;
+
+                    .list-item {
+                        background-color: transparent;
+                        transition: background-color ease $fast, color ease $fast;
+
+                        img {
+                            width: 32px;
+                            height: 32px;
+                            object-fit: contain;
+                        }
+
+                        span {
+                            font-size: 16px;
+                            display: inline-block;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .improve-health {
+        ul {
+            li {
+                margin-top: 32px;
+            margin-bottom: 32px;
+                width: calc(50% - 64px);
+
+                &:nth-child(2n) {
+                    margin-left: 64px;
+                }
+
+                &:nth-child(2n + 1) {
+                    margin-right: 64px;
+                }
+                
+                .icon-wrap {
+                    width: 96px;
+                    height: 96px;
+                    border: 5px solid #fff;
+                }
+            }
+        }
+    }
+
+    section.features {
+        .container {
+            .cards {
+                .card {
+                    width: calc(25% - 16px)
+                }
+            }
+            .row{
+                display: flex;
+                flex-wrap: nowrap;
+            }
+            .col{
+                flex: 1;
+                &:nth-child(2n){
+                    margin-left: 16px;
+                }
+                &:nth-child(2n-1){
+                    margin-right: 16px;
+                }
+            }
+        }
+    }
+
+    section.gallery {
+        .gallery-slider {
+            height: 400px;
+        }
+    }
+
+    .trust-us{
+        .trust-list {
+            flex-direction: row;
+            .trust-item{
+                margin: 36px;
+            }
+        }
+    }
+
+    section.instruction {
+        .container {
+            .instruction-list {
+                margin-top: 64px;
+                display: flex;
+                position: relative;
+
+                .list-item {
+                    margin-top: 0;
+                    flex: 1;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    padding: 0 24px;
+
+                    .number {
+                        margin-top: 24px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        color: $accent-dark;
+                        background: $accent-light;
+                        order: 2;
+                        font-size: 1.4em;
+                        font-weight: 700;
+                        position: static;
+                        width: 36px;
+                        height: 36px;
+                        border-radius: 100px;
+                    }
+
+                    .thumb {
+                        order: 1;
+                        position: static;
+                        width: 120px;
+                        height: 96px;
+                    }
+
+                    .text-wrap {
+                        order: 3;
+                        margin-left: 0;
+                        text-align: center;
+
+                        .title {
+                            margin-top: 24px;
+                        }
+
+                        .text {
+                            display: inline-block;
+                            margin-top: 16px;
+                        }
+                    }
+
+                    &::after {
+                        transform: rotate(-90deg);
+                        background: url(../images/common/instruction/down-arrow.svg);
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        background-size: contain;
+                        width: 100px;
+                        height: 48px;
+                        top: 24px;
+                        left: calc(100% - 48px);
+                    }
+                }
+            }
+
+            .buy-btn {
+                margin-top: 64px;
+                position: relative;
+                left: 50%;
+                transform: translateX(-50%);
+                width: initial;
+            }
+        }
+    }
+
+    section.main-action {
+        .enter-zip-code-wrap {
+            margin: 0 auto 48px;
+            text-align: center;
+            
+            .title {
+                font-size: 2em;
+                max-width: 800px;
+            }
+            .btn-wrap {
+                margin-top: 48px;
+                max-width: 600;
+                flex-direction: row;
+                align-items: flex-start;
+                justify-content: center;
+    
+                button,
+                a {
+                    margin-top: 0;
+                    margin-left: 16px;
+                    padding: 13px 24px 12px;
+                }
+            }
+            
+        }
+        &.dark {
+            background-attachment: fixed;
+        }
+    }
+}
+

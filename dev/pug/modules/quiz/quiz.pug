@@ -1,0 +1,309 @@
+section.quiz.modal
+    .container 
+        .modal-header 
+            .logo 
+                a.logo-link(href="./index.html") 
+                    img.logo.lazyload.fade-box(data-src="./static/images/common/logo-dark.svg", alt="Logo HomeMate.expert")
+                    //- span.divider –
+                    //- img.logo.lazyload.fade-box(data-src="./static/images/common/logo-ella-dark.png", alt="Logo Ella")
+            .close-modal-btn
+                img.lazyload.fade-box(data-src="./static/images/common/quiz/close.svg", alt="Close")
+        
+        .hero-wrapper
+            #hero-msg.hero-msg
+            img.hero.lazyload.fade-box(data-src="./static/images/common/header/header-bg-img.png", alt="Hero")
+            
+
+
+        .modal-body.overflow
+            .progress-wrapper
+                #form-progress.progress
+            form#step-form.step-wrapper(action="success.html" method="POST")
+                input.zip-input(type="hidden" name="zip")
+                input.task_id(type="hidden" name="task_id" value="152")
+                input#leadid_token(name='universal_leadid' type='hidden' value='')
+
+
+                //- step
+                .step.next(data-info="Let`s get started on your walk-in tub estimate!" data-type="radio") 
+                    .step-title DO YOU NEED TO REPLACE OR INSTALL YOUR EXISTING ROOF?
+                    .answer-wrapper
+
+                        .radio-custom
+                            input(name="service_type" id="service_type-1" type="radio" value="Replace")
+                            label(for="service_type-1") 
+                                img.lazyload.fade-box(data-src="./static/images/common/quiz/safety.svg", alt="Replace")
+                                .name: span Replace
+
+                        .radio-custom
+                            input(name="service_type" id="service_type-2" type="radio" value="Install")
+                            label(for="service_type-2") 
+                                img.lazyload.fade-box(data-src="./static/images/common/quiz/bath1.svg", alt="Install")
+                                .name: span Install
+
+                        .radio-custom
+                            input(name="service_type" id="service_type-3" type="radio" value="Repair")
+                            label(for="service_type-3") 
+                                img.lazyload.fade-box(data-src="./static/images/common/quiz/question2.svg", alt="Repair")
+                                .name: span Repair
+
+                        .radio-custom
+                            input(name="service_type" id="service_type-4" type="radio" value="Shingle over existing roof")
+                            label(for="service_type-4") 
+                                img.lazyload.fade-box(data-src="./static/images/common/quiz/question2.svg", alt="Shingle over existing roof")
+                                .name: span Shingle over existing roof
+
+                    p.data-info 
+
+                    .aplay-btn-wrapper 
+                        button.question_1.aplay-btn(disabled data-state='disable') next
+                        button.no-btn.hide no
+                        button.question_1.yes-btn.hide yes
+
+
+                //- step
+                .step.next(data-type="radio") 
+                    .step-title PLEASE, SPECIFY THE MATERIAL YOUR ROOF IS MADE OF
+                    .answer-wrapper
+                        .radio-custom
+                            input(name="roof_material" id="roof_material_1" type="radio" value="Asphalt Shingle")
+                            label(for="roof_material_1") 
+                                img.lazyload.fade-box(data-src="./static/images/common/quiz/usd.svg", alt="Asphalt Shingle")
+                                .name: span Asphalt Shingle
+
+                        .radio-custom
+                            input(name="roof_material" id="roof_material_2" type="radio" value="Cedar Shake")
+                            label(for="roof_material_2") 
+                                img.lazyload.fade-box(data-src="./static/images/common/quiz/usd.svg", alt="Cedar Shake")
+                                .name: span Cedar Shake
+
+                        .radio-custom
+                            input(name="roof_material" id="roof_material_3" type="radio" value="Natural Slate")
+                            label(for="roof_material_3") 
+                                img.lazyload.fade-box(data-src="./static/images/common/quiz/usd.svg", alt="Natural Slate")
+                                .name: span Natural Slate
+
+                        .radio-custom
+                            input(name="roof_material" id="roof_material_4" type="radio" value="Tar Torch Down")
+                            label(for="roof_material_4") 
+                                img.lazyload.fade-box(data-src="./static/images/common/quiz/question2.svg", alt="Tar Torch Down")
+                                .name: span Tar Torch Down
+
+                        .radio-custom
+                            input(name="roof_material" id="roof_material_5" type="radio" value="Aluminum")
+                            label(for="roof_material_5") 
+                                img.lazyload.fade-box(data-src="./static/images/common/quiz/question2.svg", alt="Aluminum")
+                                .name: span Aluminum
+
+                        .radio-custom
+                            input(name="roof_material" id="roof_material_6" type="radio" value="Tile")
+                            label(for="roof_material_6") 
+                                img.lazyload.fade-box(data-src="./static/images/common/quiz/question2.svg", alt="Tile")
+                                .name: span Tile
+
+                    p.data-info 
+
+                    .aplay-btn-wrapper 
+                        button.question_2.aplay-btn(disabled data-state='disable') next
+                        button.no-btn.hide no
+                        button.question_2.yes-btn.hide yes
+                            
+
+                //- step
+                .step.next(data-type="radio") 
+                    .step-title ARE YOU THE HOMEOWNER OR AUTHORIZED TO MAKE PROPERTY CHANGES?
+                    .answer-wrapper
+                        .radio-custom
+                            input(name="homeowner" id="owner1" type="radio" value="yes")
+                            label(for="owner1") 
+                                img.lazyload.fade-box(data-src="./static/images/common/quiz/yes.svg", alt="Yes")
+                                .name: span yes
+
+                        .radio-custom
+                            input(name="homeowner" id="owner2" type="radio" value="no" data-info="Our installers require the homeowner or someone authorized to make property changes be present during the estimate, would you like to continue?")
+                            label(for="owner2") 
+                                img.lazyload.fade-box(data-src="./static/images/common/quiz/no.svg", alt="No")
+                                .name: span no
+
+                    p.data-info 
+
+                    .aplay-btn-wrapper 
+                        button.question_3.aplay-btn(disabled data-state='disable') next
+                        button.no-btn.hide no
+                        button.question_3.yes-btn.hide yes
+
+
+                //- step
+                .step.next(data-info="Almost there...")
+                    .step-title FOR WHOM SHOULD I PREPARE THIS ESTIMATE?
+                    .answer-wrapper 
+
+                        .fancy-input 
+                            .input-wrapper
+                                .input-side
+                                    input(name="name" id="input-name" type="text" autocomplete="cc-name" required="required" tabindex=-1)
+                                    label(for="input-name") Full name
+                            .error-msg
+
+                        .fancy-input 
+                            .input-wrapper
+                                .input-side
+                                    input.input-street( name="address" type="text" autocomplete="off" required="required" tabindex=-1 placeholder=" ")
+                                    label(for="input-street") Your address
+                            .error-msg
+
+                        .fancy-input 
+                            .input-wrapper
+                                .input-side
+                                    input(name="email" id="input-email" type="text" required="required" tabindex=-1)
+                                    label(for="input-email" autocomplete="email") Email
+                            .error-msg
+                        
+                    p.data-info 
+
+                    .aplay-btn-wrapper 
+                        a.question_8.aplay-btn next
+                        //- button.no-btn.hide no
+                        //- button.yes-btn.hide yes
+
+
+                .step.next(data-info="And the final step!")
+                    .step-title A valid phone number is required in order to provide a formal estimate.
+                    .answer-wrapper
+                        .fancy-input 
+                            .input-wrapper
+                                img.icon.lazyload.fade-box(data-src="./static/images/common/quiz/lock.svg", alt="Lock")
+                                .input-side
+                                    input(name="phone" id="input-tel" type="text" autocomplete="tel" required="required" tabindex=-1)
+                                    label(for="input-tel") Phone number
+                            .error-msg
+
+                        .fancy-select
+                            label When you want to get a call
+                            .custom-select
+                                select(name="when_want_get_call" required)
+                                    option(value='0') Select when you want to get a call
+                                    option(value='Any time') Any time
+                                    option(value='Evening') Evening
+                                    option(value='Morning') Morning
+                            .error-msg
+
+
+                        .fancy-select
+                            label When you want to make a project
+                            .custom-select
+                                select(name="when_want_start_project" required)
+                                    option(value='0') Select when you want to make a project
+                                    option(value='Immediately') Immediately
+                                    option(value='1/6 months') 1/6 months
+                                    option(value='Not sure') Not sure
+                            .error-msg
+                        
+
+                    .aplay-btn-wrapper 
+                        a.question_9.aplay-btn next
+                        //- button.no-btn.hide no
+                        //- button.yes-btn.hide yes
+
+                    p.add-info
+                        input#leadid_tcpa_disclosure(name='leadid_tcpa_disclosure' type='checkbox' checked value="true")
+                        label(for='leadid_tcpa_disclosure') 
+                            | By clicking the 
+                            strong “Complete Your Profile” 
+                            | button, you hereby agree to the
+                            |
+                            a(href="https://homemate.expert/privacy-policy" target="_blank") Privacy Policy 
+                            |
+                            | and 
+                            |
+                            a(href="https://homemate.expert/terms-of-use" target="_blank") Terms & Conditions
+                            |
+                            | . You also hereby consent to receive marketing communications via automated telephone dialing system and/or pre-recorded calls, text messages, and/or emails from our 
+                            |
+                            a(href="https://homemate.expert/companies" target="_blank") “Premiere Partners” and marketing partners 
+                            |
+                            | at the phone number, physical address and email address provided above, even if you are on any State and/or Federal Do Not Call list. Consent is not a condition of purchase and may be revoked at any time. Message and data rates may apply. 
+                            |
+                            a(href="https://homemate.expert/privacy-policy#ccpa" target="_blank") California Residents.
+
+
+                            input(type='hidden' name='tcpa_disclosure_text' value='By clicking the “Complete Your Profile” button, you hereby agree to the Privacy Policy - https://homemate.expert/privacy-policy and Terms & Conditions - https://homemate.expert/terms-of-use. You also hereby consent to receive marketing communications via automated telephone dialing system and/or pre-recorded calls, text messages, and/or emails from our “Premiere Partners” and marketing partners - https://homemate.expert/companies at the phone number, physical address and email address provided above, even if you are on any State and/or Federal Do Not Call list. Consent is not a condition of purchase and may be revoked at any time. Message and data rates may apply. California Residents - https://homemate.expert/privacy-policy#ccpa.')
+
+                //- step
+                .step.mopile-confirm.next(data-info="And the final step!") 
+                    .step-title Please confirm your phone number.
+                    .subtitle Make sure you put the right number.
+                    .answer-wrapper
+                        .fancy-input 
+                            .input-wrapper.disabled
+                                img.icon.lazyload.fade-box(data-src="./static/images/common/quiz/lock.svg", alt="Lock")
+                                .input-side
+                                    label Phone number
+                                    span.phone-confirm
+                            .error-msg
+
+                    p.data-info 
+
+                    .aplay-btn-wrapper 
+                        a.change-phone(href="#") Change your phone number
+                        //- button.submit_questionnaire.submit(type="sumit") Yes, that's the right number
+                        button.submit_questionnaire.submit(type="sumit") Submit Yes, that's the right number
+
+
+        .sub-info
+            img.lazyload.fade-box(data-src="./static/images/common/quiz/lock.svg", alt="Lock")
+            p Secure, Protected, and Confidential
+
+.submit-preloader
+     img.lazyload.fade-box(data-src="./static/images/common/preloader.gif", alt="Loading")
+
+
+section.are-you-shure
+    .container 
+        include ../header/header_light
+        
+        .hero-wrapper
+            .hero-msg Are you certain you want to cancel your no-obligation, free estimate?
+            img.hero.lazyload.fade-box(data-src="./static/images/common/header/header-bg-img.png", alt="Hero")
+
+        .modal-body
+            .step-wrapper
+
+                .step.active
+                    .step-title We only need to verify your information in order to get you an estimation.
+                    .subtitle It takes less than two minutes.
+                    .answer-wrapper
+                    .aplay-btn-wrapper 
+                        button.no-btn.exit Cancel project
+                        button.yes-btn.continue Return to project
+                    p.data-info 
+
+
+section.to-home-page
+    .container 
+
+        include ../header/header_light
+
+        
+        .hero-wrapper
+            .hero-msg
+            img.hero.lazyload.fade-box(data-src="./static/images/common/header/header-bg-img.png", alt="Walk-in tube")
+
+        .modal-body
+            .main-step-icon 
+                img.lazyload.fade-box(data-src="./static/images/common/quiz/hand-wave.svg", alt="Bay-bay")
+            .step-wrapper
+
+                .step.active
+                    .step-title We'll miss you!
+                    .subtitle See what more we can do for you.
+                    .answer-wrapper
+                    .aplay-btn-wrapper 
+                        button.yes-btn.exit Go to homepage
+                        button.yes-btn.continue.hide Return to project
+
+                    p.data-info 
+
+                    
+
+

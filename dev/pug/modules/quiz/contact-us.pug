@@ -1,0 +1,58 @@
+section.do-not-sell.show
+    .container 
+
+        .modal-body.overflows
+            form#step-form.step-wrapper(action="#" method="POST")
+                input.zip-input(type="hidden" name="zip code")
+
+
+                .step.active
+                    .step-title Contact homemate
+                    .subtitle Have a question for homemate? We’re happy to help! Fill out the form and we'll get back to you.
+
+                    .answer-wrapper 
+
+
+                        .fancy-select
+                            label Subject
+                            .custom-select
+                                select
+                                    option(value='0') General inquiry
+                                    option(value='1') I’m a contractor/installer interested in a partnership
+                                    option(value='2') Feedback
+       
+
+                        .fancy-input 
+                            .input-wrapper
+                                .input-side
+                                    input(name="name" id="input-name" type="text" autocomplete="cc-name")
+                                    label(for="input-name") Full name
+                            .error-msg
+
+                        .fancy-input 
+                            .input-wrapper
+                                .input-side
+                                    input(name="email" id="input-email" type="text" autocomplete="email")
+                                    label(for="input-email") Email address
+                            .error-msg
+                        
+                        textarea(name="message", cols="48", rows="5", placeholder="Type your message here..." required="required")
+                        
+
+                    .aplay-btn-wrapper
+                        button.aplay-btn(type="submit") Do not sell my personal information
+
+section.thank-you
+    .container 
+        .modal-body
+            .main-step-icon 
+                img.lazyload(data-src="./static/images/common/quiz/email.svg", alt="email")
+            .step-wrapper
+
+                .step.active
+                    .step-title Thank you!
+                    .subtitle Thank you for contacting Homemate, someone from our team will contact you soon.
+                    .answer-wrapper
+                    .aplay-btn-wrapper 
+                        a.yes-btn.exit(href="./index.html")  Back to Home
+                        

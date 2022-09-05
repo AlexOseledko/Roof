@@ -1,0 +1,31 @@
+.modal.policy {
+    .modal-wrap {
+        h2 {
+            font-size: 18px;
+        }
+        .content {
+            position: relative;
+            margin-top: 24px;
+            padding: 8px 8px 16px 0;
+            max-height: calc(100vh - 240px);
+            h6{
+                margin-top: 36px;
+                font-size: 1em;
+                font-weight: 500;
+            }
+            p{
+                line-height: 150%;
+                margin: 16px 0;
+            }
+            a{
+                color: $accent-dark;
+                text-decoration: none;
+                transition: color ease $fast;
+                &:hover{
+                    color: $accent-light;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}

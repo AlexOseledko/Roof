@@ -1,0 +1,99 @@
+@media screen and (min-width: 771.8px) {
+    .nav {
+        .nav-wrap {
+            .high-order-button {
+                width: inherit;
+                height: inherit;
+                text-decoration: none;
+                fill: #fff;
+                font-size: 16px;
+                font-weight: 500;
+                color: #fff;
+                border-radius: 8px;
+                padding: 8px 32px 8px 24px;
+                border: 2px solid #FFFFFF;
+                background-color: transparent;
+                transition: all ease $fast;
+                
+                svg{
+                    margin-right: 8px;
+                }
+                span {
+                    display: inline-block;
+                }
+            }
+            
+        }
+        &.scrolled {
+            .mibile-title{
+                display: none;
+            }
+            .title {
+                white-space: nowrap;
+                display: inline-block!important;
+            }
+        }
+    }
+}
+
+
+@media screen and (min-width: 1248.8px) {
+    .nav {
+        .nav-wrap {
+            padding: 24px $desktop-side-indent;
+
+            .high-order-button {
+                order: 2;
+                margin-left: 24px;
+                margin-right: 0;
+            }
+
+            .menu {
+                .open-btn {
+                    display: none;
+                }
+
+                .menu-list-wrap {
+                    display: flex;
+
+                    .close-btn {
+                        display: none;
+                    }
+
+                    .menu-list {
+                        display: flex;
+                        flex-direction: row-reverse;
+                        align-items: center;
+
+                        .high-order-button,
+                        .trial-btn {
+                            margin: 0;
+                            margin-left: 24px;
+                        }
+
+                        .menu-item-wrap {
+                            display: flex;
+                            align-items: center;
+                        }
+
+                        .list-item {
+                            margin: 0 24px;
+
+                            a {
+                                font-size: 1em;
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+
+        &.scrolled {
+            .nav-wrap {
+                padding: 12px $desktop-side-indent;
+            }
+
+        }
+    }
+}

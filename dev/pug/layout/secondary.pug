@@ -1,0 +1,140 @@
+include ../helpers/mixins
+block variables
+
+doctype html
+html(lang="en-US")
+	head
+		if isSuccess 
+			//- Global site tag (gtag.js) - Google Analytics
+			script(async='' src='https://www.googletagmanager.com/gtag/js?id=G-B4WKNM4HKG')
+			script.
+				window.dataLayer = window.dataLayer || [];
+				function gtag(){dataLayer.push(arguments);}
+				gtag('js', new Date());
+				gtag('config', 'G-B4WKNM4HKG');
+
+			//- Google Tag Manager
+			script.
+				(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+				new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+				j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+				'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+				})(window,document,'script','dataLayer','GTM-NCBPN8G');
+			//- End Google Tag Manager
+
+		meta(charset="utf-8")
+		title #{title}
+		<!--[if IE]>
+		meta(http-equiv='X-UA-Compatible', content="IE = edge")
+		<![endif]-->
+
+		link(rel="icon", type="image/png", href="./static/images/common/favicon.png")
+		meta(name='viewport' content='width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no,height=device-height')
+
+		meta(name="description", content="")
+		meta(name="keywords" content="")
+
+		if isSuccess 
+			script.
+				!function (w, d, t) {
+				w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var i="https://analytics.tiktok.com/i18n/pixel/events.js";ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=i,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};var o=document.createElement("script");o.type="text/javascript",o.async=!0,o.src=i+"?sdkid="+e+"&lib="+t;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(o,a)};
+				ttq.load('C9KH6VRC77UD01Q8H0L0');
+				ttq.page();
+				}(window, document, 'ttq');
+			
+
+			//- Meta Pixel Code
+			script.
+				!function(f,b,e,v,n,t,s)
+				{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+				n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+				if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+				n.queue=[];t=b.createElement(e);t.async=!0;
+				t.src=v;s=b.getElementsByTagName(e)[0];
+				s.parentNode.insertBefore(t,s)}(window, document,'script',
+				'https://connect.facebook.net/en_US/fbevents.js');
+				fbq('init', '446568400286889');
+				fbq('init', '1976653752722700');
+				fbq('init', '548205256926751');
+				fbq('init', '529185755524023');
+				fbq('init', '679234420008069');
+				fbq('init', '567519654705814');
+				fbq('init', '3216686485241079');
+				fbq('init', '531315185165905');
+				fbq('init', '2109719562534928');
+				fbq('init', '380130250807333');
+				fbq('init', '1106081283641371');
+				fbq('init', '697552058023912');
+				fbq('init', '747872886653597');
+				fbq('init', '365298645592912');
+				fbq('init', '796016551381179');
+				fbq('track', 'PageView');
+
+			noscript
+				img(height='1' width='1' style='display:none' src='https://www.facebook.com/tr?id=446568400286889&ev=PageView&noscript=1')
+				img(height='1' width='1' style='display:none' src='https://www.facebook.com/tr?id=1976653752722700&ev=PageView&noscript=1')
+				img(height='1' width='1' style='display:none' src='https://www.facebook.com/tr?id=548205256926751&ev=PageView&noscript=1')
+				img(height='1' width='1' style='display:none' src='https://www.facebook.com/tr?id=529185755524023&ev=PageView&noscript=1')
+				img(height='1' width='1' style='display:none' src='https://www.facebook.com/tr?id=679234420008069&ev=PageView&noscript=1')
+				img(height='1' width='1' style='display:none' src='https://www.facebook.com/tr?id=567519654705814&ev=PageView&noscript=1')
+				img(height='1' width='1' style='display:none' src='https://www.facebook.com/tr?id=3216686485241079&ev=PageView&noscript=1')
+				img(height='1' width='1' style='display:none' src='https://www.facebook.com/tr?id=531315185165905&ev=PageView&noscript=1')
+				img(height='1' width='1' style='display:none' src='https://www.facebook.com/tr?id=2109719562534928&ev=PageView&noscript=1')
+				img(height='1' width='1' style='display:none' src='https://www.facebook.com/tr?id=380130250807333&ev=PageView&noscript=1')
+				img(height='1' width='1' style='display:none' src='https://www.facebook.com/tr?id=1106081283641371&ev=PageView&noscript=1')
+				img(height='1' width='1' style='display:none' src='https://www.facebook.com/tr?id=697552058023912&ev=PageView&noscript=1')
+				img(height='1' width='1' style='display:none' src='https://www.facebook.com/tr?id=747872886653597&ev=PageView&noscript=1')
+				img(height='1' width='1' style='display:none' src='https://www.facebook.com/tr?id=365298645592912&ev=PageView&noscript=1')
+				img(height='1' width='1' style='display:none' src='https://www.facebook.com/tr?id=796016551381179&ev=PageView&noscript=1')
+			//- Meta Pixel Code End
+		
+		link(rel="stylesheet" type='text/css' href="static/css/policy.css")
+		link(rel='preconnect' href='https://fonts.googleapis.com')
+		link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
+		link(href='https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap' rel='stylesheet')
+
+		
+	body
+		if isSuccess 
+			script.
+				ttq.track('CompleteRegistration')
+
+			//- Google Tag Manager (noscript)
+			noscript
+				iframe(src='https://www.googletagmanager.com/ns.html?id=GTM-NCBPN8G' height='0' width='0' style='display:none;visibility:hidden')
+			//- End Google Tag Manager (noscript)
+			
+			//- Meta Pixel Code
+			script.
+				fbq('track', 'CompleteRegistration');
+			//- Meta Pixel Code End
+			
+
+		block content
+
+
+		script.
+			let params = window.location.search
+			.replace('?','')
+			.split('&')
+			.reduce((p, e) => {
+				let a = e.split('=');
+				p[ decodeURIComponent(a[0])] = decodeURIComponent(a[1]);
+				return p;
+				},{}
+			);
+			const streamKey = params['stream_key'] ? params['stream_key'] : 'ggxnqHMBjw';
+			localStorage.setItem('stream_key', streamKey);
+
+			let script = document.createElement('script');
+			script.src = "https://hm.afflifter.com/tracker/analytics.js";
+			script.dataset.stream = streamKey;
+			document.body.append(script);
+		
+
+		script(src="static/js/libs.js")
+		block script
+		
+
+
+

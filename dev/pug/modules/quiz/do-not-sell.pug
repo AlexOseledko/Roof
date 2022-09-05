@@ -1,0 +1,43 @@
+section.do-not-sell.show
+    .container 
+
+        .modal-body.overflows
+            form#step-form.step-wrapper(action="success.html" method="POST")
+                input.zip-input(type="hidden" name="zip code")
+
+
+                .step.active
+                    .step-title Do not sell my personal information
+                    .subtitle Please enter your email address to help us find your record in our database.
+
+                    .answer-wrapper 
+
+                        .fancy-input 
+                            .input-wrapper
+                                .input-side
+                                    input(name="email" id="input-email" type="text" autocomplete="email" required="required")
+                                    label(for="input-email") Email address
+                            .error-msg
+                        
+
+                    .aplay-btn-wrapper
+                        button.aplay-btn Do not sell my personal information
+
+
+section.thank-you
+    .container 
+        .modal-body
+            .main-step-icon 
+                img.lazyload(data-src="./static/images/common/quiz/email.svg", alt="email")
+            .step-wrapper
+
+                .step.active
+                    .step-title Thank you!
+                    .subtitle We will not sell your personal information.
+                    .answer-wrapper
+                    .aplay-btn-wrapper 
+                        a.yes-btn.exit(href="./index.html")  Back to Home
+
+
+
+

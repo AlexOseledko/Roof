@@ -1,0 +1,33 @@
+.success-wrapper{
+    .nav{
+        // position: relative;
+        background: $header-background;
+    }
+    min-height: 100vh;
+    &>.content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 164px $mobile-side-indent;
+
+        .success{
+            text-align: center;
+            max-width:  720px;
+            
+            svg.ok-icon{
+                height: 96px;
+                width: auto;
+                object-fit: contain;
+            }
+            h2{
+                margin-top: 48px;
+            }
+            p{
+                margin-top: 24px;
+                font-weight: 500;
+                font-size: 1.6em;
+                color: #323232;
+            }
+        }
+    }
+}

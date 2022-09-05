@@ -1,0 +1,42 @@
+@media screen and (min-width: 991.8px) {
+    footer {
+        .container {
+            .no-wrap{
+                display: flex;
+                flex-wrap: nowrap;
+                justify-content: space-between;
+                // width: 80%;
+            }
+
+            .policies {
+                .list {
+                    flex-direction: row;
+                    .item{
+                        margin-bottom: 0;
+                    }
+                }
+            }
+
+            .hero {
+                display: block;
+                position: relative;
+                top: initial;
+                right: initial;
+                img {
+                    bottom: -48px;
+                }
+            }
+
+            .social-list {
+                margin: 0;
+                text-align: left;
+                .list {
+                    justify-content: flex-start;
+                }
+            }
+            .copyright {
+                text-align-last: left;
+            }
+        }
+    }
+}

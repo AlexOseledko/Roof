@@ -1,0 +1,135 @@
+@media screen and (min-width: 401.8px) {
+    header .container h1 {
+        font-size: 2em;
+    }
+}
+
+@media screen and (min-width: 991.8px) {
+    header {
+        .container {
+            position: relative;
+            padding: 24px $desktop-side-indent 48px;
+            background: url("../images/common/header/header-blur-img.png");
+            background-size: auto 100%;
+            background-repeat: no-repeat;
+            background-position: right 0 center;
+
+            h1 {
+                margin-top: 17vh;
+                font-size: 3.2em;
+                line-height: 100%;
+                text-align: left;
+                max-width: 680px;
+            }
+
+            .description {
+                text-align: left;
+                margin: 16px 0 0;
+                font-size: 1.6em;
+                line-height: 140%;
+                max-width: 580px;
+                text-transform: uppercase;
+            }
+
+            @keyframes blinker {
+                0% {
+                    opacity: 1.0;
+                }
+
+                50% {
+                    opacity: 0.2;
+                }
+
+                100% {
+                    opacity: 1.0;
+                }
+            }
+
+            .hero-wrap {
+                display: block;
+                position: absolute;
+                z-index: 0;
+                top: 20%;
+                right: 0;
+                height: 60%;
+                width: auto;
+                opacity: 1;
+
+                img {
+                    object-fit: contain;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            .enter-zip-code-wrap {
+                max-width: 600px;
+                margin: 10vh auto 0;
+                text-align: center;
+                .title {
+                    text-transform: uppercase;
+                    font-size: 1.6em;
+                    line-height: 140%;
+                    text-align: center;
+                    margin-bottom: 8px;
+                }
+
+                .btn-wrap {
+                    flex-direction: row;
+                    align-items: flex-start;
+                    justify-content: center;
+
+                    button,
+                    a {
+                        margin-top: 0;
+                        margin-left: 16px;
+                        padding: 13px 24px 12px;
+                    }
+                }
+            }
+
+            .desktop-scroll-arrow-wrap {
+                margin-top: 10vh;
+                display: block;
+                text-align: center;
+
+                .scroll-arrow {
+                    display: inline-block;
+                    width: 24px;
+                    height: auto;
+                    animation-name: blinker;
+                    animation-iteration-count: infinite;
+                    animation-timing-function: ease;
+                    animation-duration: 3s;
+                    -webkit-animation-name: blinker;
+                    -webkit-animation-iteration-count: infinite;
+                    -webkit-animation-timing-function: ease;
+                    -webkit-animation-duration: 3s;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1191.8px) {
+    header .container {
+        background-size: auto 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+
+        .hero-wrap {
+            position: absolute;
+            top: 10%;
+            right: 0;
+            height: 80%;
+            width: auto;
+
+            img {
+                object-fit: contain;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+
+}

@@ -1,0 +1,24 @@
+@import "utils/libs";
+@import "utils/vars";
+@import "utils/mixins";
+// @import "utils/fonts";
+@import "utils/sprite";
+//@include sprites($spritesheet-sprites);
+
+
+//Модули
+@import "./modules/common/common.scss";
+
+@import "./modules/header/header-light.scss";
+
+@import "./modules/quiz/quiz.scss";
+@import "./modules/quiz/quiz-media-queries.scss";
+
+@import "./modules/policy/policy.scss";
+@import "./modules/policy/policy-media-queries.scss";
+
+@import "./modules/companies/companies.scss";
+@import "./modules/companies/companies-media-queries.scss";
+
+@import "./modules/footer/footer.scss";
+@import "./modules/footer/footer-media-queries.scss";

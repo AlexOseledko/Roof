@@ -1,0 +1,13 @@
+extends layout/secondary
+
+block variables
+	-var title = 'Terms of use HomeMate.expert'
+	-var lang = 'en'
+
+block content
+	include ./modules/header/header_light
+	include ./modules/quiz/contact-us
+	include ./modules/footer/footer
+
+block script 
+	script(src="static/js/contact-us.js") 
