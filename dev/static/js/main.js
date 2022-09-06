@@ -249,6 +249,7 @@
     }
     validateSelect(inputEl) {
       const fancySelect = inputEl.closest('.fancy-select');
+      const customSelect = inputEl.closest('.custom-select');
       const erorEl = fancySelect.querySelector('.error-msg');
       let error = false;
       let errText = '';
@@ -263,8 +264,7 @@
       else fancySelect.classList.remove('error');
 
       erorEl.innerText = errText;
-
-      inputEl.addEventListener('select', e => {
+      customSelect .addEventListener('click', e => {
         fancySelect.classList.remove('error');
         erorEl.innerText = '';
       })

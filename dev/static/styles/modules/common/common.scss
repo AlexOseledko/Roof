@@ -1,7 +1,7 @@
-:root {
-    --vh: 1vh;
-    --swiper-theme-color: #007728;
-}
+// :root {
+//     --vh: 1vh;
+//     --swiper-theme-color: $accent-dark;
+// }
 
 .h-100vh{
     min-height: calc(var(--vh, 1vh) * 100);

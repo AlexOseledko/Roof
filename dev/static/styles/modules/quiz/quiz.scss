@@ -283,6 +283,13 @@ section.thank-you {
                 height: 40px;
                 object-fit: contain;
                 margin-right: 16px;
+                &.photo{
+                    margin-top: -8px;
+                    border-radius: 6px;
+                    height: 80px;
+                    width: 100%;
+                    object-fit: cover;
+                }
             }
 
             span {

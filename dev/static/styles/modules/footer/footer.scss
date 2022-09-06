@@ -1,15 +1,15 @@
 footer {
     position: relative;
     z-index: 2;
-    background: linear-gradient(180deg, #1F43C0 0.94%, #01205E 98.98%);
+    background: $footer-background;
 
     a {
-        color: #8aafff;
+        color: $footer-link;
         text-decoration: none;
         transition: color ease $fast;
 
         &:hover {
-            color: #fff;
+            color: $footer-link-hover;
             text-decoration: none;
         }
 
@@ -151,7 +151,8 @@ footer {
             font-size: 0.9em;
             line-height: 150%;
             text-align: center;
-            color: #4d65b1;
+            color: rgba($color: $footer-link, $alpha: 0.5);
+            // color: ;
 
             .privacy-policy {
                 font-weight: 500;
