@@ -419,8 +419,8 @@
       }
 
       // Display the key/value pairs
-      console.log(JSON.stringify(data));
-      return;
+      // console.log(JSON.stringify(data));
+      // return;
 
       fetch('https://hm.afflifter.com/api/leads', {
         method: 'POST',
