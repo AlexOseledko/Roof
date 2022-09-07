@@ -283,11 +283,12 @@ section.thank-you {
                 height: 40px;
                 object-fit: contain;
                 margin-right: 16px;
-                &.photo{
-                    margin-top: -8px;
+
+                &.photo {
+                    margin-left: -8px;
                     border-radius: 6px;
-                    height: 80px;
-                    width: 100%;
+                    height: 64px;
+                    width: 50%;
                     object-fit: cover;
                 }
             }
@@ -607,11 +608,18 @@ section.quiz.modal {
         }
 
         label {
+            display: none;
             color: #bbb;
             position: absolute;
             z-index: 2;
             left: 16px;
             font-size: 0.8em;
+        }
+
+        &.open {
+            label {
+                display: block;
+            }
         }
     }
 
@@ -682,7 +690,7 @@ section.quiz.modal {
     .same-as-selected {
         background-color: rgba(0, 0, 0, 0.1);
     }
-    
+
 }
 
 

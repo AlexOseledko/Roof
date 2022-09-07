@@ -89,6 +89,7 @@
                 h = this.parentNode.previousSibling;
                 for (i = 0; i < sl; i++) {
                     if (s.options[i].innerHTML == this.innerHTML) {
+
                         s.selectedIndex = i;
                         h.innerHTML = this.innerHTML;
                         y = this.parentNode.getElementsByClassName("same-as-selected");
@@ -101,6 +102,7 @@
                     }
                 }
                 h.click();
+                
             });
             b.appendChild(c);
         }
@@ -110,6 +112,8 @@
             and open/close the current select box:*/
             e.stopPropagation();
             closeAllSelect(this);
+            // var wrapper = this.closest('.fancy-select');
+            // wrapper.classList.add('open');
             this.nextSibling.classList.toggle("select-hide");
             this.classList.toggle("select-arrow-active");
         });
@@ -117,15 +121,17 @@
     function closeAllSelect(elmnt) {
         /*a function that will close all select boxes in the document,
         except the current select box:*/
-        var x, y, i, xl, yl, arrNo = [];
+        var x, y, i, xl, yl, arrNo = [], f;
         x = document.getElementsByClassName("select-items");
         y = document.getElementsByClassName("select-selected");
+        // var wrapper = document.getElementsByClassName('fancy-select');
         xl = x.length;
         yl = y.length;
         for (i = 0; i < yl; i++) {
             if (elmnt == y[i]) {
                 arrNo.push(i)
             } else {
+                // wrapper[i].classList.remove('open');
                 y[i].classList.remove("select-arrow-active");
             }
         }
@@ -138,6 +144,18 @@
     /*if the user clicks anywhere outside the select box,
     then close all select boxes:*/
     document.addEventListener("click", closeAllSelect);
+
+    var selects = document.getElementsByClassName('fancy-select');
+    for (let i = 0; i < selects.length; i++) {
+      const fancySelect = selects[i];
+      const selectSelected = fancySelect.querySelector('.custom-select .select-selected');
+      const text = selectSelected.innerText;
+      fancySelect.addEventListener('click', e => {
+        if (text !== selectSelected.innerText) {
+          fancySelect.classList.add('open');
+        }
+      })
+    }
 }
 
 

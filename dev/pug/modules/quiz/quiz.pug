@@ -182,7 +182,7 @@ section.quiz.modal
                             label When you want to get a call
                             .custom-select
                                 select(name="when_want_get_call" required)
-                                    option(value='0') Select when you want to get a call
+                                    option(value='0') When you want to get a call
                                     option(value='Any time') Any time
                                     option(value='Evening') Evening
                                     option(value='Morning') Morning
@@ -193,9 +193,9 @@ section.quiz.modal
                             label When you want to make a project
                             .custom-select
                                 select(name="when_want_start_project" required)
-                                    option(value='0') Select when you want to make a project
+                                    option(value='0') When you want to make a project
                                     option(value='Immediately') Immediately
-                                    option(value='1/6 months') 1/6 months
+                                    option(value='1-6 months') 1-6 months
                                     option(value='Not sure') Not sure
                             .error-msg
                         
@@ -209,7 +209,7 @@ section.quiz.modal
                         input#leadid_tcpa_disclosure(name='leadid_tcpa_disclosure' type='checkbox' checked value="true")
                         label(for='leadid_tcpa_disclosure') 
                             | By clicking the 
-                            strong “Complete Your Profile” 
+                            strong “Next” 
                             | button, you hereby agree to the
                             |
                             a(href="https://homemate.expert/privacy-policy" target="_blank") Privacy Policy 
@@ -227,7 +227,7 @@ section.quiz.modal
                             a(href="https://homemate.expert/privacy-policy#ccpa" target="_blank") California Residents.
 
 
-                            input(type='hidden' name='tcpa_disclosure_text' value='By clicking the “Complete Your Profile” button, you hereby agree to the Privacy Policy - https://homemate.expert/privacy-policy and Terms & Conditions - https://homemate.expert/terms-of-use. You also hereby consent to receive marketing communications via automated telephone dialing system and/or pre-recorded calls, text messages, and/or emails from our “Premiere Partners” and marketing partners - https://homemate.expert/companies at the phone number, physical address and email address provided above, even if you are on any State and/or Federal Do Not Call list. Consent is not a condition of purchase and may be revoked at any time. Message and data rates may apply. California Residents - https://homemate.expert/privacy-policy#ccpa.')
+                            input(type='hidden' name='tcpa_disclosure_text' value='By clicking the “Next” button, you hereby agree to the Privacy Policy - https://homemate.expert/privacy-policy and Terms & Conditions - https://homemate.expert/terms-of-use. You also hereby consent to receive marketing communications via automated telephone dialing system and/or pre-recorded calls, text messages, and/or emails from our “Premiere Partners” and marketing partners - https://homemate.expert/companies at the phone number, physical address and email address provided above, even if you are on any State and/or Federal Do Not Call list. Consent is not a condition of purchase and may be revoked at any time. Message and data rates may apply. California Residents - https://homemate.expert/privacy-policy#ccpa.')
 
                 //- step
                 .step.mopile-confirm.next(data-info="And the final step!") 
@@ -245,7 +245,7 @@ section.quiz.modal
                     p.data-info 
 
                     .aplay-btn-wrapper 
-                        a.change-phone(href="#") Change your phone number
+                        a.change-phone(href="") Change your phone number
                         //- button.submit_questionnaire.submit(type="sumit") Yes, that's the right number
                         button.submit_questionnaire.submit(type="sumit") Submit Yes, that's the right number
 

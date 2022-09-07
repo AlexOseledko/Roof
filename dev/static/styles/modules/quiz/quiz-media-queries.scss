@@ -47,6 +47,12 @@
                     width: 56px;
                     height: 56px;
                     margin: 0 0 16px;
+                    &.photo {
+                        margin-left: 0;
+                        margin-top: -8px;
+                        height: 80px;
+                        width: 100%;
+                    }
                 }
             }
         }
