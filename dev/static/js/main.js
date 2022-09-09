@@ -59,87 +59,88 @@
     }
   }
 
+
   function selectInit(params) {
     var x, i, j, l, ll, selElmnt, a, b, c;
     /*look for any elements with the class "custom-select":*/
     x = document.getElementsByClassName("custom-select");
     l = x.length;
     for (i = 0; i < l; i++) {
-        selElmnt = x[i].getElementsByTagName("select")[0];
-        ll = selElmnt.length;
-        /*for each element, create a new DIV that will act as the selected item:*/
-        a = document.createElement("DIV");
-        a.setAttribute("class", "select-selected");
-        a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
-        x[i].appendChild(a);
-        /*for each element, create a new DIV that will contain the option list:*/
-        b = document.createElement("DIV");
-        b.setAttribute("class", "select-items select-hide");
-        for (j = 1; j < ll; j++) {
-            /*for each option in the original select element,
-            create a new DIV that will act as an option item:*/
-            c = document.createElement("DIV");
-            c.innerHTML = selElmnt.options[j].innerHTML;
-            c.addEventListener("click", function (e) {
-                /*when an item is clicked, update the original select box,
-                and the selected item:*/
-                var y, i, k, s, h, sl, yl;
-                s = this.parentNode.parentNode.getElementsByTagName("select")[0];
-                sl = s.length;
-                h = this.parentNode.previousSibling;
-                for (i = 0; i < sl; i++) {
-                    if (s.options[i].innerHTML == this.innerHTML) {
+      selElmnt = x[i].getElementsByTagName("select")[0];
+      ll = selElmnt.length;
+      /*for each element, create a new DIV that will act as the selected item:*/
+      a = document.createElement("DIV");
+      a.setAttribute("class", "select-selected");
+      a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+      x[i].appendChild(a);
+      /*for each element, create a new DIV that will contain the option list:*/
+      b = document.createElement("DIV");
+      b.setAttribute("class", "select-items select-hide");
+      for (j = 1; j < ll; j++) {
+        /*for each option in the original select element,
+        create a new DIV that will act as an option item:*/
+        c = document.createElement("DIV");
+        c.innerHTML = selElmnt.options[j].innerHTML;
+        c.addEventListener("click", function (e) {
+          /*when an item is clicked, update the original select box,
+          and the selected item:*/
+          var y, i, k, s, h, sl, yl;
+          s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+          sl = s.length;
+          h = this.parentNode.previousSibling;
+          for (i = 0; i < sl; i++) {
+            if (s.options[i].innerHTML == this.innerHTML) {
 
-                        s.selectedIndex = i;
-                        h.innerHTML = this.innerHTML;
-                        y = this.parentNode.getElementsByClassName("same-as-selected");
-                        yl = y.length;
-                        for (k = 0; k < yl; k++) {
-                            y[k].removeAttribute("class");
-                        }
-                        this.setAttribute("class", "same-as-selected");
-                        break;
-                    }
-                }
-                h.click();
-                
-            });
-            b.appendChild(c);
-        }
-        x[i].appendChild(b);
-        a.addEventListener("click", function (e) {
-            /*when the select box is clicked, close any other select boxes,
-            and open/close the current select box:*/
-            e.stopPropagation();
-            closeAllSelect(this);
-            // var wrapper = this.closest('.fancy-select');
-            // wrapper.classList.add('open');
-            this.nextSibling.classList.toggle("select-hide");
-            this.classList.toggle("select-arrow-active");
+              s.selectedIndex = i;
+              h.innerHTML = this.innerHTML;
+              y = this.parentNode.getElementsByClassName("same-as-selected");
+              yl = y.length;
+              for (k = 0; k < yl; k++) {
+                y[k].removeAttribute("class");
+              }
+              this.setAttribute("class", "same-as-selected");
+              break;
+            }
+          }
+          h.click();
+
         });
+        b.appendChild(c);
+      }
+      x[i].appendChild(b);
+      a.addEventListener("click", function (e) {
+        /*when the select box is clicked, close any other select boxes,
+        and open/close the current select box:*/
+        e.stopPropagation();
+        closeAllSelect(this);
+        // var wrapper = this.closest('.fancy-select');
+        // wrapper.classList.add('open');
+        this.nextSibling.classList.toggle("select-hide");
+        this.classList.toggle("select-arrow-active");
+      });
     }
     function closeAllSelect(elmnt) {
-        /*a function that will close all select boxes in the document,
-        except the current select box:*/
-        var x, y, i, xl, yl, arrNo = [], f;
-        x = document.getElementsByClassName("select-items");
-        y = document.getElementsByClassName("select-selected");
-        // var wrapper = document.getElementsByClassName('fancy-select');
-        xl = x.length;
-        yl = y.length;
-        for (i = 0; i < yl; i++) {
-            if (elmnt == y[i]) {
-                arrNo.push(i)
-            } else {
-                // wrapper[i].classList.remove('open');
-                y[i].classList.remove("select-arrow-active");
-            }
+      /*a function that will close all select boxes in the document,
+      except the current select box:*/
+      var x, y, i, xl, yl, arrNo = [], f;
+      x = document.getElementsByClassName("select-items");
+      y = document.getElementsByClassName("select-selected");
+      // var wrapper = document.getElementsByClassName('fancy-select');
+      xl = x.length;
+      yl = y.length;
+      for (i = 0; i < yl; i++) {
+        if (elmnt == y[i]) {
+          arrNo.push(i)
+        } else {
+          // wrapper[i].classList.remove('open');
+          y[i].classList.remove("select-arrow-active");
         }
-        for (i = 0; i < xl; i++) {
-            if (arrNo.indexOf(i)) {
-                x[i].classList.add("select-hide");
-            }
+      }
+      for (i = 0; i < xl; i++) {
+        if (arrNo.indexOf(i)) {
+          x[i].classList.add("select-hide");
         }
+      }
     }
     /*if the user clicks anywhere outside the select box,
     then close all select boxes:*/
@@ -156,7 +157,7 @@
         }
       })
     }
-}
+  }
 
 
   class FormWizard {
@@ -258,7 +259,7 @@
           error = true;
         } else if (inputEl.name === 'email' && this.validateEmail(inputEl)) {
           error = true;
-        } else if (inputEl.nodeName  === 'SELECT' && this.validateSelect(inputEl)) {
+        } else if (inputEl.nodeName === 'SELECT' && this.validateSelect(inputEl)) {
           error = true;
         }
       });
@@ -276,13 +277,13 @@
       if (inputEl.value === 0 || inputEl.value === '0') {
         error = true;
         errText = 'Please select one value';
-      } 
+      }
 
       if (error) fancySelect.classList.add('error');
       else fancySelect.classList.remove('error');
 
       erorEl.innerText = errText;
-      customSelect .addEventListener('click', e => {
+      customSelect.addEventListener('click', e => {
         fancySelect.classList.remove('error');
         erorEl.innerText = '';
       })
@@ -324,7 +325,7 @@
       if (!inputEl.value) {
         error = true;
         errText = 'Enter a valid address please';
-      } 
+      }
 
       if (error) fancyInput.classList.add('error');
       else fancyInput.classList.remove('error');
@@ -401,6 +402,50 @@
         phoneConfirmEl.innerText = tel;
       }
     }
+    getTaskId() {
+      const input = document.querySelector('input.task_id');
+      const task = document.querySelector('input[name="service_type"]:checked').value;
+      const material = document.querySelector('input[name="roof_material"]:checked').value;
+      const taskIdObj = {
+        'Replace': {
+          'Asphalt Shingle': 325,
+          'Cedar Shake': 329,
+          'Natural Slate': 327,
+          'Tar Torch Down': 335,
+          'Aluminum': 331,
+          'Tile': 333,
+        },
+        'Install': {
+          'Asphalt Shingle': 313,
+          'Cedar Shake': 317,
+          'Natural Slate': 315,
+          'Tar Torch Down': 323,
+          'Aluminum': 319,
+          'Tile': 321,
+        },
+        'Repair': {
+          'Asphalt Shingle': 301,
+          'Cedar Shake': 305,
+          'Natural Slate': 303,
+          'Tar Torch Down': 311,
+          'Aluminum': 307,
+          'Tile': 309,
+        },
+        'Shingle over existing roof': {
+          'Asphalt Shingle': 301,
+        }
+      }
+
+      console.log(task + ', ' + material);
+
+      if (task && material && task === 'Shingle over existing roof' && !taskIdObj[task][material]) {
+        input.value = taskIdObj[task]['Asphalt Shingle'];
+      } else if (task && material && taskIdObj[task] && taskIdObj[task][material]) {
+        input.value = taskIdObj[task][material];
+      }
+
+
+    }
     updateHeroMsg(elem) {
       const heroMsgElems = document.querySelector('#hero-msg');
       if (elem.dataset.info) {
@@ -412,6 +457,8 @@
     submitForm(form) {
       const preloader = document.querySelector('.submit-preloader');
       preloader.classList.add('active');
+
+      this.getTaskId();
 
       const formInputs = form.querySelectorAll('input, select, button');
       const formData = new FormData(form);
@@ -429,7 +476,7 @@
           data[key] = value.replace(/\D+/g, "");;
         } else if (key === 'email') {
           data[key] = value.toLowerCase();
-        } else if (key === 'name' || key === 'zip') {
+        } else if (key === 'name' || key === 'zip' || key === 'address') {
           data[key] = value;
         } else {
           data.order[key] = value;
@@ -538,7 +585,7 @@
         } catch (er) { }
 
         try {
-          if (!applyBtn.classList.contains('submit')){
+          if (!applyBtn.classList.contains('submit')) {
             applyBtn.addEventListener('click', e => {
               e.preventDefault();
               if (this.validate(stepEl)) {
@@ -546,7 +593,7 @@
               }
             })
             applyBtn.addEventListener('keydown', logKey);
-          } 
+          }
         } catch (er) { }
       })
 
