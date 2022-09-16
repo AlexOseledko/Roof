@@ -108,6 +108,46 @@ section.quiz.modal
                         button.question_2.aplay-btn(disabled data-state='disable') next
                         button.no-btn.hide no
                         button.question_2.yes-btn.hide yes
+
+
+                //- step
+                .step.next
+                    .step-title Where will this project take place?
+                    .answer-wrapper 
+
+                        .fancy-input 
+                            .input-wrapper
+                                .input-side
+                                    input.input-address( name="address" type="text" autocomplete="off" required="required" tabindex=-1 placeholder=" ")
+                                    label(for="input-address") Your address
+                            .error-msg
+
+                        .fancy-input 
+                            .input-wrapper.disabled
+                                .input-side
+                                    input.input-country( name="country" type="text" autocomplete="off" required="required" tabindex=-1 placeholder=" " value="US" disabled)
+                                    label(for="input-state") Your country
+                            .error-msg
+
+                        .fancy-input 
+                            .input-wrapper
+                                .input-side
+                                    input.input-state( name="state" type="text" autocomplete="off" required="required" tabindex=-1 placeholder=" ")
+                                    label(for="input-state") Your state
+                            .error-msg
+
+                        .fancy-input 
+                            .input-wrapper
+                                .input-side
+                                    input.input-city( name="city" type="text" autocomplete="off" required="required" tabindex=-1 placeholder=" ")
+                                    label(for="input-city") Your city
+                            .error-msg
+
+                    
+                    p.data-info 
+
+                    .aplay-btn-wrapper 
+                        a.question_8.aplay-btn next
                             
 
                 //- step
@@ -146,12 +186,6 @@ section.quiz.modal
                                     label(for="input-name") Full name
                             .error-msg
 
-                        .fancy-input 
-                            .input-wrapper
-                                .input-side
-                                    input.input-street( name="address" type="text" autocomplete="off" required="required" tabindex=-1 placeholder=" ")
-                                    label(for="input-street") Your address
-                            .error-msg
 
                         .fancy-input 
                             .input-wrapper
@@ -213,15 +247,15 @@ section.quiz.modal
                             strong “Next” 
                             | you consent to the
                             |
-                            a(href="https://homemate.expert/privacy-policy" target="_blank") Privacy Policy 
+                            a(href="./privacy-policy" target="_blank") Privacy Policy 
                             |
                             | and 
                             |
-                            a(href="https://homemate.expert/terms-of-use" target="_blank") Terms & Conditions
+                            a(href="./terms-of-use" target="_blank") Terms & Conditions
                             |
                             | . You also agree to receive marketing communications from our  
                             |
-                            a(href="https://homemate.expert/companies" target="_blank") “Premiere Partners”
+                            a(href="./companies" target="_blank") “Premiere Partners”
                             | and marketing partners at the phone number, physical address, and email address indicated above, even if you are on any State and/or Federal Do Not Call list. Consent is not a purchasing requirement and may be withdrawn at any time. There may be messaging and data fees.
 
 

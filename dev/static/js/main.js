@@ -60,7 +60,7 @@
   }
 
 
-  function selectInit(params) {
+  function selectInit() {
     var x, i, j, l, ll, selElmnt, a, b, c;
     /*look for any elements with the class "custom-select":*/
     x = document.getElementsByClassName("custom-select");
@@ -255,7 +255,7 @@
           error = true;
         } else if (inputEl.name === 'name' && this.validateName(inputEl)) {
           error = true;
-        } else if (inputEl.name === 'address' && this.validateAddress(inputEl)) {
+        } else if ((inputEl.name === 'address' || inputEl.name === 'city' || inputEl.name === 'state') && this.validateAddress(inputEl)) {
           error = true;
         } else if (inputEl.name === 'email' && this.validateEmail(inputEl)) {
           error = true;
@@ -471,12 +471,13 @@
       for (let elem of formData.entries()) {
         const key = elem[0];
         const value = elem[1];
+        const hiOrderParams = ['name', 'phone', 'email', 'zip', 'country', 'state', 'city', 'address'];
 
         if (key === 'phone') {
-          data[key] = value.replace(/\D+/g, "");;
+          data[key] = value.replace(/\D+/g, "");
         } else if (key === 'email') {
           data[key] = value.toLowerCase();
-        } else if (key === 'name' || key === 'zip' || key === 'address') {
+        } else if (hiOrderParams.includes(key)) {
           data[key] = value;
         } else {
           data.order[key] = value;
@@ -484,8 +485,8 @@
       }
 
       // Display the key/value pairs
-      // console.log(JSON.stringify(data));
-      // return;
+      console.log(JSON.stringify(data));
+      return;
 
       fetch('https://hm.afflifter.com/api/leads', {
         method: 'POST',
@@ -663,6 +664,46 @@
   }
 
 
+  google.maps.event.addDomListener(window, 'load', function () {
+    const stateInput = document.querySelector('.input-state');
+    const cityInput = document.querySelector('.input-city');
+    const addressInput = document.querySelector('.input-address');
+
+    let places = new google.maps.places.Autocomplete(addressInput, {
+      types: ['address'],
+      placeholder: ' ',
+      componentRestrictions: { country: ['us'] }
+    });
+
+    google.maps.event.addListener(places, 'place_changed', function () {
+      let place = places.getPlace();
+      let address = place.formatted_address;
+      let latitude = place.geometry.location.lat();
+      let longitude = place.geometry.location.lng();
+      let latlng = new google.maps.LatLng(latitude, longitude);
+      let geocoder = new google.maps.Geocoder();
+
+      geocoder.geocode({ 'latLng': latlng }, function (results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+          if (results[0]) {
+            let endPosition = (isNaN(results[0].address_components[results[0].address_components.length - 2].long_name)) ? 0 : 1;
+
+            // let address = results[0].formatted_address;
+            // let pin = results[0].address_components[results[0].address_components.length - 1 - endPosition].long_name;
+            // let country = results[0].address_components[results[0].address_components.length - 2 - endPosition].long_name;
+            let state = results[0].address_components[results[0].address_components.length - 3 - endPosition].long_name;
+            let city = results[0].address_components[results[0].address_components.length - 5 - endPosition].long_name;
+
+
+            stateInput.value = state;
+            cityInput.value = city;
+          }
+        }
+      });
+    });
+  });
+
+
 
 
   const gallerySwiper = new Swiper('.gallery-slider', {
@@ -718,6 +759,7 @@
   smoothScroll();
   navHeandler.init();
   zipCodeHeandler();
+  selectInit();
   const formModal = new FormWizard({
     form: '#step-form',
     steps: '.step',
@@ -725,17 +767,8 @@
     nextBtn: '.aplay-btn'
   });
 
-  function init() {
-    let streetInput = document.getElementsByClassName('input-street')[0];
 
-    let streetAutocomplete = new google.maps.places.Autocomplete(streetInput, {
-      types: ['address'],
-      placeholder: ' ',
-      componentRestrictions: { country: ['us'] }
-    });
-  }
-  selectInit();
-  google.maps.event.addDomListener(window, 'load', init);
+
 
 
 })();
