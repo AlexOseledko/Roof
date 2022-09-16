@@ -27,7 +27,7 @@ section.quiz.modal
 
                 //- step
                 .step.next(data-info="Let`s get started on your walk-in tub estimate!" data-type="radio") 
-                    .step-title DO YOU NEED TO REPLACE OR INSTALL YOUR EXISTING ROOF?
+                    .step-title DO YOU NEED TO INSTALL OR REPLACE YOUR EXISTING ROOF?
                     .answer-wrapper
 
                         .radio-custom
@@ -64,7 +64,7 @@ section.quiz.modal
 
                 //- step
                 .step.next(data-type="radio") 
-                    .step-title PLEASE, SPECIFY THE MATERIAL YOUR ROOF IS MADE OF
+                    .step-title PLEASE SPECIFY WHAT MATERIAL YOUR ROOF IS MADE OF
                     .answer-wrapper.row-3-elem
                         .radio-custom
                             input(name="roof_material" id="roof_material_1" type="radio" value="Asphalt Shingle")
@@ -136,7 +136,7 @@ section.quiz.modal
 
                 //- step
                 .step.next(data-info="Almost there...")
-                    .step-title FOR WHOM SHOULD I PREPARE THIS ESTIMATE?
+                    .step-title WHO SHOULD I MAKE THIS ESTIMATE FOR?
                     .answer-wrapper 
 
                         .fancy-input 
@@ -169,7 +169,7 @@ section.quiz.modal
 
 
                 .step.next(data-info="And the final step!")
-                    .step-title A valid phone number is required in order to provide a formal estimate.
+                    .step-title A valid phone number is needed to give a formal estimate.
                     .answer-wrapper
                         .fancy-input 
                             .input-wrapper
@@ -180,10 +180,10 @@ section.quiz.modal
                             .error-msg
 
                         .fancy-select
-                            label When you want to get a call
+                            label When do you want us to call you?
                             .custom-select
                                 select(name="when_want_get_call" required)
-                                    option(value='0') When you want to get a call
+                                    option(value='0') When do you want us to call you?
                                     option(value='Any time') Any time
                                     option(value='Evening') Evening
                                     option(value='Morning') Morning
@@ -191,10 +191,10 @@ section.quiz.modal
 
 
                         .fancy-select
-                            label When you want to make a project
+                            label When do you want to complete your project?
                             .custom-select
                                 select(name="when_want_start_project" required)
-                                    option(value='0') When you want to make a project
+                                    option(value='0') When do you want to complete your project?
                                     option(value='Immediately') Immediately
                                     option(value='1-6 months') 1-6 months
                                     option(value='Not sure') Not sure
@@ -211,7 +211,7 @@ section.quiz.modal
                         label(for='leadid_tcpa_disclosure') 
                             | By clicking the 
                             strong “Next” 
-                            | button, you hereby agree to the
+                            | you consent to the
                             |
                             a(href="https://homemate.expert/privacy-policy" target="_blank") Privacy Policy 
                             |
@@ -219,21 +219,18 @@ section.quiz.modal
                             |
                             a(href="https://homemate.expert/terms-of-use" target="_blank") Terms & Conditions
                             |
-                            | . You also hereby consent to receive marketing communications via automated telephone dialing system and/or pre-recorded calls, text messages, and/or emails from our 
+                            | . You also agree to receive marketing communications from our  
                             |
-                            a(href="https://homemate.expert/companies" target="_blank") “Premiere Partners” and marketing partners 
-                            |
-                            | at the phone number, physical address and email address provided above, even if you are on any State and/or Federal Do Not Call list. Consent is not a condition of purchase and may be revoked at any time. Message and data rates may apply. 
-                            |
-                            a(href="https://homemate.expert/privacy-policy#ccpa" target="_blank") California Residents.
+                            a(href="https://homemate.expert/companies" target="_blank") “Premiere Partners”
+                            | and marketing partners at the phone number, physical address, and email address indicated above, even if you are on any State and/or Federal Do Not Call list. Consent is not a purchasing requirement and may be withdrawn at any time. There may be messaging and data fees.
 
 
-                            input(type='hidden' name='tcpa_disclosure_text' value='By clicking the “Next” button, you hereby agree to the Privacy Policy and Terms & Conditions. You also hereby consent to receive marketing communications via automated telephone dialing system and/or pre-recorded calls, text messages, and/or emails from our “Premiere Partners” and marketing partners at the phone number, physical address and email address provided above, even if you are on any State and/or Federal Do Not Call list. Consent is not a condition of purchase and may be revoked at any time. Message and data rates may apply. California Residents.')
+                            input(type='hidden' name='tcpa_disclosure_text' value='By clicking "Next," you consent to the Privacy Statement and Terms & Conditions. You also agree to receive marketing communications from our "Premier Partners" and marketing partners at the phone number, physical address, and email address indicated above, even if you are on any State and/or Federal Do Not Call list. Consent is not a purchasing requirement and may be withdrawn at any time. There may be messaging and data fees.')
 
                 //- step
                 .step.mopile-confirm.next(data-info="And the final step!") 
-                    .step-title Please confirm your phone number.
-                    .subtitle Make sure you put the right number.
+                    .step-title Please check that your phone number is correct
+                    .subtitle Make sure you entered the right number
                     .answer-wrapper
                         .fancy-input 
                             .input-wrapper.disabled
@@ -248,12 +245,12 @@ section.quiz.modal
                     .aplay-btn-wrapper 
                         a.change-phone(href="") Change your phone number
                         //- button.submit_questionnaire.submit(type="sumit") Yes, that's the right number
-                        button.submit_questionnaire.submit(type="sumit") Submit Yes, that's the right number
+                        button.submit_questionnaire.submit(type="sumit") Yes, it is the correct number
 
 
         .sub-info
             img.lazyload.fade-box(data-src="./static/images/common/quiz/lock.svg", alt="Lock")
-            p Secure, Protected, and Confidential
+            p Protected, Secure, and Confidential
 
 .submit-preloader
      img.lazyload.fade-box(data-src="./static/images/common/preloader.gif", alt="Loading")
@@ -264,14 +261,14 @@ section.are-you-shure
         include ../header/header_light
         
         .hero-wrapper
-            .hero-msg Are you certain you want to cancel your no-obligation, free estimate?
+            .hero-msg Are you sure you want to cancel your obligation-free, no-cost estimate?
             img.hero.lazyload.fade-box(data-src="./static/images/common/header/header-bg-img.png", alt="Hero")
 
         .modal-body
             .step-wrapper
 
                 .step.active
-                    .step-title We only need to verify your information in order to get you an estimation.
+                    .step-title To provide you with an estimate, we only need to confirm the information you provided.
                     .subtitle It takes less than two minutes.
                     .answer-wrapper
                     .aplay-btn-wrapper 
@@ -296,12 +293,12 @@ section.to-home-page
             .step-wrapper
 
                 .step.active
-                    .step-title We'll miss you!
-                    .subtitle See what more we can do for you.
+                    .step-title You will be greatly missed.
+                    .subtitle Check out our other available services.
                     .answer-wrapper
                     .aplay-btn-wrapper 
                         button.yes-btn.exit Go to homepage
-                        button.yes-btn.continue.hide Return to project
+                        button.yes-btn.continue.hide Get back to project
 
                     p.data-info 
 
