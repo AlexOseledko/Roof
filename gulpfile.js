@@ -5,6 +5,7 @@ const videos = require('./gulp/tasks/videos');
 const vendors = require('./gulp/tasks/vendorsJS');
 const imageMinify = require('./gulp/tasks/imageMinify');
 const styles = require('./gulp/tasks/styles');
+const copy = require('./gulp/tasks/copy');
 const clean = require('./gulp/tasks/clean');
 const pug2html = require('./gulp/tasks/pug');
 const spriteSVG = require('./gulp/tasks/spriteSVG');
@@ -16,5 +17,6 @@ const dev = gulp.parallel(pug2html, script, vendors, styles, imageMinify, sprite
 exports.default = gulp.series(
   clean,
   dev,
+  copy,
   serve
 );
