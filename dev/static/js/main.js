@@ -60,7 +60,7 @@
   }
 
 
-  function selectInit() {
+  ;(function selectInit() {
     var x, i, j, l, ll, selElmnt, a, b, c;
     /*look for any elements with the class "custom-select":*/
     x = document.getElementsByClassName("custom-select");
@@ -113,26 +113,23 @@
         and open/close the current select box:*/
         e.stopPropagation();
         closeAllSelect(this);
-        // var wrapper = this.closest('.fancy-select');
-        // wrapper.classList.add('open');
         this.nextSibling.classList.toggle("select-hide");
         this.classList.toggle("select-arrow-active");
       });
     }
+
     function closeAllSelect(elmnt) {
       /*a function that will close all select boxes in the document,
       except the current select box:*/
       var x, y, i, xl, yl, arrNo = [], f;
       x = document.getElementsByClassName("select-items");
       y = document.getElementsByClassName("select-selected");
-      // var wrapper = document.getElementsByClassName('fancy-select');
       xl = x.length;
       yl = y.length;
       for (i = 0; i < yl; i++) {
         if (elmnt == y[i]) {
           arrNo.push(i)
         } else {
-          // wrapper[i].classList.remove('open');
           y[i].classList.remove("select-arrow-active");
         }
       }
@@ -149,15 +146,31 @@
     var selects = document.getElementsByClassName('fancy-select');
     for (let i = 0; i < selects.length; i++) {
       const fancySelect = selects[i];
-      const selectSelected = fancySelect.querySelector('.custom-select .select-selected');
-      const text = selectSelected.innerText;
-      fancySelect.addEventListener('click', e => {
-        if (text !== selectSelected.innerText) {
+      const selectElem = fancySelect.querySelector('select');
+      const selectSelected = fancySelect.querySelector('.select-selected');
+      const originSelectSelected = selectSelected.innerText;
+
+      function addOpenClass() {
+        if (originSelectSelected !== selectSelected.innerText) {
           fancySelect.classList.add('open');
         }
-      })
+      }
+
+      selectElem.addEventListener('selectState', (e) => {
+        if (!selectElem.classList.contains(e.detail.forElemWithClass)) return;
+        const optionsArr = Array.from(selectElem.options);
+        optionsArr.forEach((optionEl, i) => {
+          if (optionEl.value === e.detail.state) {
+            selectSelected.innerHTML = optionEl.innerText;
+            selectElem.selectedIndex = i;
+           addOpenClass();
+          }
+        })
+      });
+
+      fancySelect.addEventListener('click', addOpenClass)
     }
-  }
+  })();
 
 
   class FormWizard {
@@ -317,14 +330,14 @@
       return error;
     }
     validateAddress(inputEl) {
-      const fancyInput = inputEl.closest('.fancy-input');
+      const fancyInput = inputEl.closest('.fancy-input') || inputEl.closest('.fancy-select');
       const erorEl = fancyInput.querySelector('.error-msg');
       let error = false;
       let errText = '';
 
       if (!inputEl.value) {
         error = true;
-        errText = 'Enter a valid address please';
+        errText = 'This is a required field';
       }
 
       if (error) fancyInput.classList.add('error');
@@ -436,8 +449,6 @@
         }
       }
 
-      console.log(task + ', ' + material);
-
       if (task && material && task === 'Shingle over existing roof' && !taskIdObj[task][material]) {
         input.value = taskIdObj[task]['Asphalt Shingle'];
       } else if (task && material && taskIdObj[task] && taskIdObj[task][material]) {
@@ -485,8 +496,8 @@
       }
 
       // Display the key/value pairs
-      console.log(JSON.stringify(data));
-      return;
+      // console.log(JSON.stringify(data));
+      // return;
 
       fetch('https://hm.afflifter.com/api/leads', {
         method: 'POST',
@@ -677,7 +688,6 @@
 
     google.maps.event.addListener(places, 'place_changed', function () {
       let place = places.getPlace();
-      let address = place.formatted_address;
       let latitude = place.geometry.location.lat();
       let longitude = place.geometry.location.lng();
       let latlng = new google.maps.LatLng(latitude, longitude);
@@ -687,23 +697,24 @@
         if (status == google.maps.GeocoderStatus.OK) {
           if (results[0]) {
             let endPosition = (isNaN(results[0].address_components[results[0].address_components.length - 2].long_name)) ? 0 : 1;
+            let state = results[0].address_components[results[0].address_components.length - 3 - endPosition]?.short_name;
+            let city = results[0].address_components[results[0].address_components.length - 5 - endPosition]?.long_name;
 
-            // let address = results[0].formatted_address;
-            // let pin = results[0].address_components[results[0].address_components.length - 1 - endPosition].long_name;
-            // let country = results[0].address_components[results[0].address_components.length - 2 - endPosition].long_name;
-            let state = results[0].address_components[results[0].address_components.length - 3 - endPosition].long_name;
-            let city = results[0].address_components[results[0].address_components.length - 5 - endPosition].long_name;
+            if (city) cityInput.value = city;
+            if (state) {
+              stateInput.dispatchEvent(new CustomEvent('selectState', {
+                detail: {
+                  forElemWithClass: 'input-state',
+                  state: state,
+                }
+              }));
+            }
 
-
-            stateInput.value = state;
-            cityInput.value = city;
           }
         }
       });
     });
   });
-
-
 
 
   const gallerySwiper = new Swiper('.gallery-slider', {
@@ -759,17 +770,11 @@
   smoothScroll();
   navHeandler.init();
   zipCodeHeandler();
-  selectInit();
   const formModal = new FormWizard({
     form: '#step-form',
     steps: '.step',
     progress: '#form-progress',
     nextBtn: '.aplay-btn'
   });
-
-
-
-
-
 })();
 
