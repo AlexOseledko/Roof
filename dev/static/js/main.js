@@ -274,10 +274,35 @@
           error = true;
         } else if (inputEl.nodeName === 'SELECT' && this.validateSelect(inputEl)) {
           error = true;
+        } else if (inputEl.name === 'leadid_tcpa_disclosure' && this.validateTCPA(inputEl)) {
+          error = true;
         }
       });
 
       return !error;
+    } 
+    validateTCPA(inputEl) {
+      const fancyInput = inputEl.closest('.add-info');
+      const erorEl = fancyInput.querySelector('.error-msg');
+      let error = false;
+      let errText = '';
+
+      if (!inputEl.checked) {
+        error = true;
+        errText = 'This is a required checkbox';
+      }
+
+      if (error) fancyInput.classList.add('error');
+      else fancyInput.classList.remove('error');
+
+      erorEl.innerText = errText;
+
+      inputEl.addEventListener('change', e => {
+        fancyInput.classList.remove('error');
+        erorEl.innerText = '';
+      })
+
+      return error;
     }
     validateSelect(inputEl) {
       const fancySelect = inputEl.closest('.fancy-select');

@@ -300,9 +300,11 @@ section.quiz.modal
                         //- button.no-btn.hide no
                         //- button.yes-btn.hide yes
 
-                    p.add-info
-                        input#leadid_tcpa_disclosure(name='leadid_tcpa_disclosure' type='checkbox' checked value="true")
+                    div.add-info
+
                         label(for='leadid_tcpa_disclosure') 
+                            input#leadid_tcpa_disclosure(name='leadid_tcpa_disclosure' type='checkbox')
+
                             | By clicking the 
                             strong “Next” 
                             | you consent to the
@@ -318,8 +320,9 @@ section.quiz.modal
                             a(href="./companies" target="_blank") “Premiere Partners”
                             | and marketing partners at the phone number, physical address, and email address indicated above, even if you are on any State and/or Federal Do Not Call list. Consent is not a purchasing requirement and may be withdrawn at any time. There may be messaging and data fees.
 
+                        .error-msg
 
-                            input(type='hidden' name='tcpa_disclosure_text' value='By clicking "Next," you consent to the Privacy Statement and Terms & Conditions. You also agree to receive marketing communications from our "Premier Partners" and marketing partners at the phone number, physical address, and email address indicated above, even if you are on any State and/or Federal Do Not Call list. Consent is not a purchasing requirement and may be withdrawn at any time. There may be messaging and data fees.')
+                        input(type='hidden' name='tcpa_disclosure_text' value='By clicking "Next," you consent to the Privacy Statement and Terms & Conditions. You also agree to receive marketing communications from our "Premier Partners" and marketing partners at the phone number, physical address, and email address indicated above, even if you are on any State and/or Federal Do Not Call list. Consent is not a purchasing requirement and may be withdrawn at any time. There may be messaging and data fees.')
 
                 //- step
                 .step.mopile-confirm.next(data-info="And the final step!") 

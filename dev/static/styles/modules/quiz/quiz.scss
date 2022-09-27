@@ -455,16 +455,34 @@ section.thank-you {
         margin-top: 24px;
         font-size: 0.8em;
         color: #999;
-        text-align: left;
-        display: flex;
-        align-items: flex-start;
 
+        label{
+            padding: 8px 0 8px 32px;
+            padding-left: 36px;
+            position: relative;
+            display: inline-block;
+        }
         input {
-            margin: 2px 8px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 16px;
+            width: 16px;
+
+            margin: 12px 8px;
+        }
+        .error-msg{
+            display: inline-block;
+            margin: 8px 0 8px 32px ;
+            color: #f00;
         }
 
         a {
             text-decoration: none;
+        }
+        &.error{
+            border-radius: 4px;
+            background: #ffe3e3;
         }
     }
 
