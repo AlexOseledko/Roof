@@ -440,8 +440,38 @@
         phoneConfirmEl.innerText = tel;
       }
     }
-    getTaskId() {
-      const input = document.querySelector('input.task_id');
+    
+    initModernize() {
+      const task = document.querySelector('input[name="service_type"]:checked').value;
+      const material = document.querySelector('input[name="roof_material"]:checked').value;
+      const materialInput = document.querySelector('input.modernize_service');
+      const taskInput = document.querySelector('input.modernize_RoofingPlan');
+
+      const materialIdObj = {
+        'Asphalt Shingle': 'ROOFING_ASPHALT',
+        'Cedar Shake': 'ROOFING_CEDAR_SHAKE',
+        'Natural Slate': 'ROOFING_NATURAL_SLATE',
+        'Tar Torch Down': 'ROOFING_TAR_TORCHDOWN',
+        'Aluminum': 'ROOFING_METAL',
+        'Tile': 'ROOFING_TILE',
+      }
+
+      const taskIdObj = {
+        'Replace': 'Completely replace roof',
+        'Install': 'Install roof on new construction',
+        'Repair': 'Repair existing roof'
+      }
+
+      if (taskInput && task && taskIdObj[task])  taskInput.value = taskIdObj[task];
+      else taskInput?.remove();
+
+      if (materialInput && material && materialIdObj[material])  materialInput.value = materialIdObj[material];
+      else materialInput?.remove();
+    }
+
+
+    initNetworx() {
+      const input = document.querySelector('input.networx_task_id');
       const task = document.querySelector('input[name="service_type"]:checked').value;
       const material = document.querySelector('input[name="roof_material"]:checked').value;
       const taskIdObj = {
@@ -494,7 +524,8 @@
       const preloader = document.querySelector('.submit-preloader');
       preloader.classList.add('active');
 
-      this.getTaskId();
+      this.initNetworx();
+      this.initModernize();
 
       const formInputs = form.querySelectorAll('input, select, button');
       const formData = new FormData(form);
