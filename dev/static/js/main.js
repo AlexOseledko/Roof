@@ -509,8 +509,6 @@
       } else if (task && material && taskIdObj[task] && taskIdObj[task][material]) {
         input.value = taskIdObj[task][material];
       }
-
-
     }
     updateHeroMsg(elem) {
       const heroMsgElems = document.querySelector('#hero-msg');
