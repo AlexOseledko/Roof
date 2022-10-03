@@ -553,7 +553,7 @@
       // console.log(JSON.stringify(data));
       // return;
 
-      fetch('https://hm.afflifter.com/api/leads', {
+      fetch('https://hm.afflifter.com/api/leads' + location.search, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
