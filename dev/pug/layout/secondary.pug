@@ -96,25 +96,6 @@ html(lang="en-US")
 		block content
 
 
-		script.
-			let params = window.location.search
-			.replace('?','')
-			.split('&')
-			.reduce((p, e) => {
-				let a = e.split('=');
-				p[ decodeURIComponent(a[0])] = decodeURIComponent(a[1]);
-				return p;
-				},{}
-			);
-			const streamKey = params['stream_key'] ? params['stream_key'] : 'ggxnqHMBjw';
-			localStorage.setItem('stream_key', streamKey);
-
-			let script = document.createElement('script');
-			script.src = "https://hm.afflifter.com/tracker/analytics.js";
-			script.dataset.stream = streamKey;
-			document.body.append(script);
-		
-
 		script(src="static/js/libs.js")
 		block script
 		

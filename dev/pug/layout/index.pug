@@ -88,6 +88,7 @@ html(lang="en-US")
 			
 		include ../modules/quiz/quiz
 
+
 		script.
 			let params = window.location.search
 			.replace('?','')
@@ -98,19 +99,15 @@ html(lang="en-US")
 				return p;
 				},{}
 			);
-			const streamKey = params['stream_key'] ? params['stream_key'] : 'ggxnqHMBjw';
+			const streamKey = params['stream_key'] ? params['stream_key'] : 'Ojc3tjtE6q';
 			localStorage.setItem('stream_key', streamKey);
-
-			let script = document.createElement('script');
-			script.src = "https://hm.afflifter.com/tracker/analytics.js";
-			script.dataset.stream = streamKey;
-			document.body.append(script);
-
 
 		script(src="https://maps.googleapis.com/maps/api/js?v=weekly&key=AIzaSyDhzxqNmRTrYXDX2TZF8Ygv9eTi8EIJPCQ&libraries=places&sensor=false&language=en") 
 		script(src="static/js/libs.js")
 		script(src="static/js/main.js")
 		block script
+
+		script(async='', defer='', src='https://hm.afflifter.com/tracker/analytics.js')
 
 		// TrustedForm
 		script(type='text/javascript').
