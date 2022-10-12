@@ -510,6 +510,8 @@
         input.value = taskIdObj[task][material];
       }
     }
+
+
     updateHeroMsg(elem) {
       const heroMsgElems = document.querySelector('#hero-msg');
       if (elem.dataset.info) {
@@ -518,12 +520,55 @@
         heroMsgElems.innerText = '';
       }
     }
+
+    initAdoptacontractor() {
+      const input = document.querySelector('input.adoptacontractor_numcategory');
+      const task = document.querySelector('input[name="service_type"]:checked').value;
+      const material = document.querySelector('input[name="roof_material"]:checked').value;
+      const taskIdObj = {
+        'Replace': {
+          'Asphalt Shingle': 271,
+          'Cedar Shake': 276,
+          'Natural Slate': 274,
+          'Tar Torch Down': 272,
+          'Aluminum': 273,
+          'Tile': 275,
+        },
+        'Install': {
+          'Asphalt Shingle': 259,
+          'Cedar Shake': 264,
+          'Natural Slate': 262,
+          'Tar Torch Down': 260,
+          'Aluminum': 261,
+          'Tile': 263,
+        },
+        'Repair': {
+          'Asphalt Shingle': 265,
+          'Cedar Shake': 269,
+          'Natural Slate': 267,
+          'Tar Torch Down': 270,
+          'Aluminum': 266,
+          'Tile': 268,
+        },
+        'Shingle over existing roof': {
+          'Asphalt Shingle': 216,
+        }
+      }
+
+      if (task && material && task === 'Shingle over existing roof' && !taskIdObj[task][material]) {
+        input.value = taskIdObj[task]['Asphalt Shingle'];
+      } else if (task && material && taskIdObj[task] && taskIdObj[task][material]) {
+        input.value = taskIdObj[task][material];
+      }
+    }
+
     submitForm(form) {
       const preloader = document.querySelector('.submit-preloader');
       preloader.classList.add('active');
 
       this.initNetworx();
       this.initModernize();
+      this.initAdoptacontractor();
 
       const formInputs = form.querySelectorAll('input, select, button');
       const formData = new FormData(form);
